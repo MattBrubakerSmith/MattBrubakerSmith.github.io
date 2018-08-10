@@ -6,10 +6,30 @@
 ; Description: Portfolio website for- you guessed it! MATTHEWBRUBAKERSMITH!
 ;===========================================
 -->
-<%- include('partials/header'); %>
-<% if(page == 'about' || page == 'portfolio' || page == 'contact') { %>
-    <%- include('pages/' + page) %>
-<% } else { %>
-    <%- include('pages/404') %>
-<% } %>
-<%- include('partials/footer'); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matthew Brubaker Smith - Web Developer • Graphic Designer</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit:600i|Oswald:300|Scope+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="logo-nav-column">
+            <%- include('partials/main-nav'); %>
+        </div>
+        <div id="header-main-column">
+            <%- include('partials/header'); %>
+            <% if(page == 'about' || page == 'portfolio' || page == 'contact') { %>
+                <%- include('pages/' + page) %>
+            <% } else { %>
+                <%- include('pages/404') %>
+            <% } %>
+        </div>
+    </div>
+    <%- include('partials/footer'); %>
+</body>
+</html>

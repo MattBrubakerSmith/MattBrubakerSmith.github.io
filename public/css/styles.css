@@ -1,0 +1,195 @@
+/*
+    Site colors:
+        Green:
+            rgb(0, 153, 0);
+        Yellow:
+            rgb(255, 255, 51);
+        Darker Yellow:
+            rgb(204, 204, 51);
+        Dark gray:
+            rgb(29, 29, 29);
+*/
+
+/* LAYOUT STYLES */
+
+body {
+    margin: 0px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 10px 0px 10px;
+}
+
+/* FONT STYLES */
+
+body {
+    font-family: 'Scope One', serif;
+}
+
+h1, h2, h3, h4, h5, h6, nav {
+    font-family: 'Kanit', sans-serif;
+}
+
+.text-card-subtitle {
+    font-family: 'Oswald', sans-serif;
+}
+
+/* HEADER STYLES */
+
+#header {
+    position: relative;
+    height: 147px;
+    text-align: right;
+}
+
+#header h1 { 
+    margin: 0px;
+    line-height: 20px;
+}    
+
+#header h2 {
+    margin: 0px;
+    line-height: 30px;
+    letter-spacing: -.1px;
+    margin-right: 5px;
+}
+
+#header h3 {
+   text-transform: uppercase;
+   margin-right: 15px;
+   color: rgb(0, 153, 0);
+}
+
+#header div {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    width: 450px;
+    height: 45px;
+    z-index: -1;
+    background-color: rgb(255, 255, 51);
+    transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+}
+
+/* LOGO AND NAVIGATION STYLES */
+
+#logo-nav-column {
+    min-width: 250px;
+}
+
+#logo-nav-column img {
+    position: fixed;
+    width: 250px;
+}
+
+nav {
+    position: fixed;
+    top: 167px;
+}
+
+nav ul {
+    padding: 0px;
+    margin-top: 20px;
+}
+
+nav ul li {
+    width: 126px;
+    height: 30px;
+
+    list-style-type: none;
+    text-align: center;
+    
+    margin-bottom: 20px;
+    background-color: rgb(29, 29, 29);
+
+    transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+}
+
+nav ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    line-height: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 51);
+}
+
+nav ul li div {
+    width: 100%;
+    height: 100%;
+
+    transform: skew(10deg);
+    -webkit-transform: skew(10deg);
+}
+
+nav ul li:first-of-type {
+    margin-left: 92px;
+}
+
+nav ul li:nth-of-type(2) {
+    margin-left: 82px;
+}
+
+nav ul li:last-of-type {
+    margin-left: 72px;
+}
+
+/* PAGE CONTENT STYLES */
+
+.page {
+    display: block;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+.text-card {
+    background-color: rgb(29, 29, 29);
+    transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+}
+
+.text-card-content {
+    transform: skew(10deg);
+    -webkit-transform: skew(10deg);
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0px 20px 0px;
+}
+
+.text-card-content h1 {
+    color: rgb(0, 153, 0);
+}
+
+.text-card-content p {
+    color: white;
+}
+
+.text-card-ribbon {
+    background-color: rgb(255, 255, 51);
+    height: 33px;
+    margin-left: -70px;
+}
+
+.text-card-subtitle {
+    margin-left: 70px;
+    line-height: 33px;
+}
+
+.text-card-ribbon-back {
+    position: absolute;
+    top: 103px;
+    z-index: -100;
+    background-color: rgb(204, 204, 51);
+    width: 33px;
+    height: 33px;
+}
