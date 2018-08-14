@@ -8,6 +8,10 @@
             rgb(204, 204, 51);
         Dark gray:
             rgb(29, 29, 29);
+
+    Breakpoints:
+        950px
+        ...
 */
 
 /* LAYOUT STYLES */
@@ -17,14 +21,14 @@ body {
 }
 
 #container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 10px 0px 10px;
+    padding: 40px 40px 0px 40px;
+}
+
+#header-main-column {
+    max-width: 900px;
+    margin-left: 300px;
 }
 
 /* FONT STYLES */
@@ -43,31 +47,31 @@ h1, h2, h3, h4, h5, h6, nav {
 
 /* HEADER STYLES */
 
-#header {
+header {
     position: relative;
     height: 147px;
     text-align: right;
 }
 
-#header h1 { 
+header h1 { 
     margin: 0px;
     line-height: 20px;
 }    
 
-#header h2 {
+header h2 {
     margin: 0px;
     line-height: 30px;
     letter-spacing: -.1px;
     margin-right: 5px;
 }
 
-#header h3 {
+header h3 {
    text-transform: uppercase;
    margin-right: 15px;
    color: rgb(0, 153, 0);
 }
 
-#header div {
+header div {
     position: absolute;
     top: -10px;
     right: -12px;
@@ -82,22 +86,16 @@ h1, h2, h3, h4, h5, h6, nav {
 /* LOGO AND NAVIGATION STYLES */
 
 #logo-nav-column {
-    min-width: 250px;
+    position: fixed;
 }
 
-#logo-nav-column img {
-    position: fixed;
+.logo {
     width: 250px;
-}
-
-nav {
-    position: fixed;
-    top: 167px;
 }
 
 nav ul {
     padding: 0px;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 
 nav ul li {
@@ -152,6 +150,10 @@ nav ul li:last-of-type {
     margin-top: 20px;
 }
 
+.text-card-container {
+    position: relative;
+}
+
 .text-card {
     background-color: rgb(29, 29, 29);
     transform: skew(-10deg);
@@ -177,19 +179,129 @@ nav ul li:last-of-type {
 .text-card-ribbon {
     background-color: rgb(255, 255, 51);
     height: 33px;
-    margin-left: -70px;
+    margin-left: -14%;
 }
 
 .text-card-subtitle {
-    margin-left: 70px;
+    margin-left: 12%;
     line-height: 33px;
 }
 
 .text-card-ribbon-back {
     position: absolute;
-    top: 103px;
+    top: 118px;
+    left: -.6%;
     z-index: -100;
     background-color: rgb(204, 204, 51);
     width: 33px;
-    height: 33px;
+    height: 50px;
+    transform: skew(10deg);
+    -webkit-transform: skew(10deg);
 }
+
+/* FOOTER STYLES */
+
+footer {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px 0px 40px;
+}
+
+.footer-background {
+    position: absolute;
+    z-index: -100;
+    width: calc(100% - 55px);
+    height: 100px;
+    background-color: rgb(29, 29, 29);
+    transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+}
+
+.footer-content {
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/****** MEDIA QUERY STYLES ******/
+
+/* LOGO AND NAVIGATION MEDIA QUERIES */
+
+@media screen and (max-width: 900px) {
+    #logo-nav-column {
+        position: static;
+    }
+    
+    .logo {
+        height: 130px;
+        float: left;
+    }
+
+    nav {
+        width: 30%;
+        float: left;
+    }
+
+    nav ul {
+        margin-top: 0px;
+    }
+
+    nav ul li:first-of-type {
+        margin-left: 2px;
+    }
+    
+    nav ul li:nth-of-type(2) {
+        margin-left: -8px;
+    }
+    
+    nav ul li:last-of-type {
+        margin-left: -18px;
+    }
+
+    header h1, header h2{
+        white-space: nowrap;
+    }
+
+    header h1 span {
+        display: block;
+    }
+
+    header h1 span:first-of-type {
+        font-size: 110%;
+        line-height: 30px;
+    }
+
+    header h1 span:last-of-type {
+        font-size: 190%;
+        line-height: 45px;
+    }
+
+    header h2 span {
+        display: block;
+    }
+
+    header h2 span:first-of-type {
+        font-size: 91%;
+        line-height: 22px;
+    }
+
+    header h2 span:nth-of-type(2) {
+        display: none;
+    }
+
+    header h2 span:last-of-type {
+        font-size: 81%;
+        line-height: 15px;
+    }
+
+    header div {
+        width: 190px;
+        height: 115px;
+        z-index: -1;
+        background-color: rgb(255, 255, 51);
+        transform: skew(-10deg);
+        -webkit-transform: skew(-10deg);
+    }
+}
+    
