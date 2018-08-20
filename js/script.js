@@ -5,27 +5,78 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Initialization function
 function init() {
-    createCardAttributes();
-    generateCards();
+    displayPage("about");
 }
 
-// Creates custom attributes for cards
-function createCardAttributes() {
-    document.createAttribute("card-title");
-    document.createAttribute("card-accent");
-    document.createAttribute("card-content");
-}
+let about = new AboutPage({
+    title: "About",
+    subtitle: "Subtitle",
+    bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc mauris, dignissim ullamcorper erat fermentum a. Ut venenatis ut ipsum maximus convallis. Curabitur non lacinia enim, in interdum quam. Cras in sapien risus. Phasellus vitae nisi ante. Aliquam erat volutpat. Nullam faucibus bibendum enim sit amet maximus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer et eleifend orci, quis dictum massa."
+});
 
-// Generates cards
-function generateCards() {
-    let cards = document.getElementsByClassName("card");
-    for(let i = cards.length - 1; i >= 0; i--) {
-        createCard(cards[i]);
+let contact = new ContactPage({
+    title: "Contact",
+    subtitle: "Subtitle",
+    bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc mauris, dignissim ullamcorper erat fermentum a. Ut venenatis ut ipsum maximus convallis. Curabitur non lacinia enim, in interdum quam. Cras in sapien risus. Phasellus vitae nisi ante. Aliquam erat volutpat. Nullam faucibus bibendum enim sit amet maximus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer et eleifend orci, quis dictum massa."
+});
+
+let portfolio = new PortfolioPage({
+    title: "Portfolio",
+    subtitle: "Subtitle",
+    bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc mauris, dignissim ullamcorper erat fermentum a. Ut venenatis ut ipsum maximus convallis. Curabitur non lacinia enim, in interdum quam. Cras in sapien risus. Phasellus vitae nisi ante. Aliquam erat volutpat. Nullam faucibus bibendum enim sit amet maximus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer et eleifend orci, quis dictum massa."
+});
+
+function displayPage(pageName) {
+    let page = document.getElementById("page");
+    while (page.firstChild) {
+        page.removeChild(page.firstChild);
+    }
+
+    switch(pageName) {
+        case "about": {
+            page.appendChild(about.getPage());
+            break;
+        }
+        case "contact": {
+            page.appendChild(contact.getPage());
+            break;
+        }
+        case "portfolio": {
+            page.appendChild(portfolio.getPage());
+            break;
+        }
     }
 }
 
-// Creates a stylized HTML card using the card-* attributes from the passed in parent node, then replaces the parent with the card in the DOM.
-function createCard(parent) {
+function ContactPage(content) {
+    let container = document.createElement("div");
+    let cardTitle = document.createElement("h1");
+    let cardTitleText = document.createTextNode(content.title);
+    cardTitle.appendChild(cardTitleText);
+    container.appendChild(cardTitle);
+
+    return {
+        getPage: function() {
+            return container;
+        }
+    }
+}
+
+function PortfolioPage(content) {
+    let container = document.createElement("div");
+    let cardTitle = document.createElement("h1");
+    let cardTitleText = document.createTextNode(content.title);
+    cardTitle.appendChild(cardTitleText);
+    container.appendChild(cardTitle);
+
+    return {
+        getPage: function() {
+            return container;
+        }
+    }
+}
+
+function AboutPage(content) {
     let container = document.createElement("div");
     container.classList.add("text-card-container");
 
@@ -42,7 +93,7 @@ function createCard(parent) {
     card.appendChild(cardContent);
 
     let cardTitle = document.createElement("h1");
-    let cardTitleText = document.createTextNode(parent.getAttribute("card-title"));
+    let cardTitleText = document.createTextNode(content.title);
     cardTitle.appendChild(cardTitleText);
     cardContent.appendChild(cardTitle);
 
@@ -51,15 +102,19 @@ function createCard(parent) {
     cardContent.appendChild(cardRibbon);
 
     let cardAccent = document.createElement("div");
-    let cardAccentText = document.createTextNode(parent.getAttribute("card-accent"));
+    let cardAccentText = document.createTextNode(content.subtitle);
     cardAccent.classList.add("text-card-subtitle");
     cardAccent.appendChild(cardAccentText);
     cardRibbon.appendChild(cardAccent);
 
     let cardP = document.createElement("p");
-    let cardPText = document.createTextNode(parent.getAttribute("card-content"));
+    let cardPText = document.createTextNode(content.bodyText);
     cardP.appendChild(cardPText);
     cardContent.appendChild(cardP);
 
-    parent.parentNode.replaceChild(container, parent);
+    return {
+        getPage: function() {
+            return container;
+        }
+    }
 }

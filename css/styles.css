@@ -22,6 +22,7 @@ body {
 
 #container {
     max-width: 1200px;
+    min-height: calc(100vh - 160px);
     margin: 0 auto;
     padding: 40px 40px 0px 40px;
 }
