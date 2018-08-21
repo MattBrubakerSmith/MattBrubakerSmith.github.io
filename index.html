@@ -19,9 +19,9 @@
 <body>
     <div id="container">
         <div id="logo-nav-column">
-            <img class="logo" src="images/mbs-logo.svg" alt="Matthew Brubaker Smith's Logo'">
-            <nav>
-                <ul>
+            <img id="logo" class="logo" src="images/mbs-logo.svg" alt="Matthew Brubaker Smith's Logo'">
+            <nav id="desktop-nav">
+                <ul id="nav-list">
                     <li>
                         <div>
                             <a href="#" onclick="displayPage('about');">ABOUT</a>
@@ -39,6 +39,9 @@
                     </li>
                 </ul>
             </nav>
+            <div id="mobile-nav-button" onclick="toggleMobileNav()">
+                &#9776;
+            </div>
         </div>
         <div id="header-main-column">
             <header>
