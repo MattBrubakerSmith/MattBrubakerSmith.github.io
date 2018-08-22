@@ -13,9 +13,13 @@ let PageManager = (function() {
     let instance;
     function createInstance() {
         let about = new AboutPage({
-            title: "About",
-            subtitle: "Subtitle",
-            bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc mauris, dignissim ullamcorper erat fermentum a. Ut venenatis ut ipsum maximus convallis. Curabitur non lacinia enim, in interdum quam. Cras in sapien risus. Phasellus vitae nisi ante. Aliquam erat volutpat. Nullam faucibus bibendum enim sit amet maximus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer et eleifend orci, quis dictum massa."
+            title: "About Matt",
+            subtitle: "Who do I think I am?!",
+            bodyText: [
+                "I'm a web developer. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "I'm a graphic designer. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "I'm a absolute delight. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            ]
         });
     
         let contact = new ContactPage({
@@ -132,10 +136,12 @@ function AboutPage(content) {
     cardAccent.appendChild(cardAccentText);
     cardRibbon.appendChild(cardAccent);
 
-    let cardP = document.createElement("p");
-    let cardPText = document.createTextNode(content.bodyText);
-    cardP.appendChild(cardPText);
-    cardContent.appendChild(cardP);
+    for(let i = 0; i < content.bodyText.length; i++) {
+        let cardP = document.createElement("p");
+        let cardPText = document.createTextNode(content.bodyText[i]);
+        cardP.appendChild(cardPText);
+        cardContent.appendChild(cardP);
+    }
 
     return container;
 }

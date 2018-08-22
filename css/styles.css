@@ -30,7 +30,6 @@ h1, h2, h3, h4, h5, h6, #desktop-nav {
 
 .accent-text {
     font-family: 'Oswald', sans-serif;
-    font-weight: bold;
 }
 
 /* HEADER STYLES */
@@ -326,7 +325,7 @@ footer {
 }
 
 .active-footer-link {
-    color: rgb(255, 255, 51) !important;
+    text-decoration: underline !important;
 }
 
 /****** MEDIA QUERY STYLES ******/
@@ -488,7 +487,7 @@ footer {
             1px 1px 0 rgb(29, 29, 29);
         font-size: 2em;
         line-height: 1em;
-        
+
         user-select: none;
         -moz-user-select: none;
 
