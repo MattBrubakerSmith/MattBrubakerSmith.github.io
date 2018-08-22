@@ -1,9 +1,11 @@
 // Initialization function
 function init() {
     displayPage("about");
+    setFooterYear();
+
     portfolioGalleryStyleAdaptor();
     window.addEventListener("resize", function() {
-        portfolioGalleryStyleAdaptor()
+        portfolioGalleryStyleAdaptor();
     });
 }
 
@@ -80,11 +82,28 @@ function displayPage(pageName) {
             break;
         }
     }
+
+    styleActiveLink(pageName);
+}
+
+function styleActiveLink(page) {
+    let navLinks = document.getElementsByClassName("nav-link");
+    let footerLinks = document.getElementsByClassName("footer-link");
+    for(let i = 0; i < navLinks.length; i++) {
+        if(navLinks[i] != document.getElementById(page + "-link")) {
+            navLinks[i].classList.remove("active-link");
+            footerLinks[i].classList.remove("active-footer-link");
+        }
+        else {
+            navLinks[i].classList.add("active-link");
+            footerLinks[i].classList.add("active-footer-link");
+        }
+    }
 }
 
 function AboutPage(content) {
     let container = document.createElement("div");
-    container.classList.add("skew-card-container");
+    container.classList.add("skew-card-container", "about-card");
 
     let card = document.createElement("div");
     card.classList.add("skew-card");
@@ -258,20 +277,23 @@ function toggleMobileNav() {
     let logo = document.getElementById("logo");
     let navList = document.getElementById("nav-list");
 
-    if(nav.classList.contains("show")) {
-        nav.classList.remove("show");
+    if(nav.classList.contains("nav-show")) {
         navList.classList.remove("navlist-show");
         setTimeout(function() {
-            logo.classList.remove("logo-navlist-show");
-        })
+            nav.classList.remove("nav-show");
+        }, 300);
     }
     else {
-        nav.classList.add("show");
-        logo.classList.add("logo-navlist-show");
+        nav.classList.add("nav-show");
         setTimeout(function() {
             navList.classList.add("navlist-show");
-        }, 200)
+        }, 300);
     }
+}
+
+function setFooterYear() {
+    let year = document.createTextNode(new Date().getFullYear());
+    document.getElementById("footer-year").appendChild(year);
 }
 
 // Run init() on load

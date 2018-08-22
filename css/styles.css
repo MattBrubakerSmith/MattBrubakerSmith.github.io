@@ -1,24 +1,9 @@
-/*
-    Site colors:
-        Green:
-            rgb(0, 153, 0);
-        Yellow:
-            rgb(255, 255, 51);
-        Darker Yellow:
-            rgb(204, 204, 51);
-        Dark gray:
-            rgb(29, 29, 29);
-
-    Breakpoints:
-        950px
-        ...
-*/
-
 /* LAYOUT STYLES */
 
 body {
     margin: 0px;
     background-color: rgb(230,230,230);
+    overflow-x: hidden;
 }
 
 #container {
@@ -118,6 +103,18 @@ header div {
 
     transform: skew(-10deg);
     -webkit-transform: skew(-10deg);
+
+    transition: 
+        background-color 200ms ease-out,
+        color 200ms ease-out;
+    -webkit-transition: 
+        background-color 200ms ease-out,
+        color 200ms ease-out;
+}
+
+#nav-list li:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 255, 51);
 }
 
 #nav-list li a {
@@ -148,6 +145,15 @@ header div {
 
 #nav-list li:last-of-type {
     margin-left: 72px;
+}
+
+.active-link {
+    background-color: rgb(0, 153, 0) !important;
+    text-decoration-color: white !important;
+}
+
+.active-link a {
+    color: white !important;
 }
 
 /* PAGE CONTENT STYLES */
@@ -291,8 +297,36 @@ footer {
 
 .footer-content {
     color: white;
+    text-align: center;
     width: 80%;
     margin: 0 auto;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    padding: unset;
+    list-style-type: none;
+}
+
+.footer-nav li {
+    margin: 0px 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.active-footer-link {
+    color: rgb(255, 255, 51) !important;
 }
 
 /****** MEDIA QUERY STYLES ******/
@@ -385,10 +419,6 @@ footer {
         width: 90%;
         margin: 0 auto !important;
     }
-
-    .footer-content {
-        width: 72%;
-    }
 }
 
 @media screen and (max-width: 700px) {
@@ -404,19 +434,18 @@ footer {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     #logo {
         height: unset;
         float: unset;
         margin-bottom: 1em;
-        transition: margin 600ms ease-out;
-        -webkit-transition: margin 600ms ease-out;
     }
 
-    .show {
+    .nav-show {
         display: block !important;
+        width: 30% !important;
     }
     
     .navlist-show {
@@ -424,20 +453,16 @@ footer {
         left: 0px !important;
     }
 
-    .logo-navlist-show {
-        margin-left: -20px;
-    }
-
     #desktop-nav {
-        /* display: none;
-        position: absolute;
-        right: -6%;
-        bottom: 1%; */
+        width: 0px;
 
         padding-right: 10px;
         padding-left: 60px;
         margin-left: -50px;
         overflow: hidden;
+
+        transition: width 400ms ease-out;
+        -webkit-transition: width 400ms ease-out;
     }
 
     #nav-list {
@@ -457,13 +482,15 @@ footer {
         display: block;
         color: rgb(255, 255, 51);
         text-shadow:
-            -2px -2px 0 rgb(29, 29, 29),
-            2px -2px 0 rgb(29, 29, 29),
-            -2px 2px 0 rgb(29, 29, 29),
-            2px 2px 0 rgb(29, 29, 29);
-        font-size: 3em;
+            -1px -1px 0 rgb(29, 29, 29),
+            1px -1px 0 rgb(29, 29, 29),
+            -1px 1px 0 rgb(29, 29, 29),
+            1px 1px 0 rgb(29, 29, 29);
+        font-size: 2em;
         line-height: 1em;
+        
         user-select: none;
+        -moz-user-select: none;
 
         float: right;
         clear: both;
@@ -537,27 +564,107 @@ footer {
 }
 
 @media screen and (max-width: 650px) {
-    #mobile-nav-button {
-        font-size: 2em;
-    }
-
     .portfolio-piece {
         max-width: 100%;
         margin-bottom: 1em;
     }
 
-    .skew-card-container {
+    .about-card {
         width: 140%;
         margin-left: -20%;
     }
 
     footer {
         width: 140%;
-        margin-left: -20%;
+        margin-left: -25%;
     }
 }
 
 @media screen and (max-width: 525px) {
+    header {
+        margin-top: 1em;
+    }
 
+    header h1, header h2{
+        white-space: nowrap;
+    }
+
+    header h1 span {
+        display: block;
+    }
+
+    header h1 span:first-of-type {
+        font-size: 110%;
+        line-height: 30px;
+    }
+
+    header h1 span:last-of-type {
+        font-size: 190%;
+        line-height: 45px;
+    }
+
+    header h2 {
+        margin-top: 0px;
+    }
+
+    header h2 span {
+        display: block;
+    }
+
+    header h2 span:first-of-type {
+        font-size: 91%;
+        line-height: 22px;
+    }
+
+    header h2 span:nth-of-type(2) {
+        display: none;
+    }
+
+    header h2 span:last-of-type {
+        font-size: 81%;
+        line-height: 15px;
+    }
+
+    header div {
+        width: 70%;
+        height: 115px;
+        top: -8px;
+        left: 15%;
+        z-index: -1;
+        background-color: rgb(255, 255, 51);
+        transform: skew(-10deg);
+        -webkit-transform: skew(-10deg);
+    }
+
+    #logo {
+        margin-top: 40px;
+    }
+
+    #desktop-nav {
+        position: absolute;
+        width: 100% !important;
+        padding: unset;
+        margin: unset;
+        overflow: visible;
+    }
+
+    #nav-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    #nav-list li {
+        margin-left: unset !important;
+        font-size: .8em;
+        width: unset;
+        padding: 0px 10px;
+        margin: 0px 10px;
+    }
+
+    .footer-content {
+        margin-left: 5%;
+    }
 }
     

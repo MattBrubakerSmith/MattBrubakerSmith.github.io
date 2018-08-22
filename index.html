@@ -12,7 +12,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
     <title>Matthew Brubaker Smith - Web Developer • Graphic Designer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <link href="https://fonts.googleapis.com/css?family=Kanit:600i|Oswald:300|Scope+One" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -22,17 +28,17 @@
             <img id="logo" class="logo" src="images/mbs-logo.svg" alt="Matthew Brubaker Smith's Logo'">
             <nav id="desktop-nav">
                 <ul id="nav-list">
-                    <li>
+                    <li id="about-link" class="nav-link">
                         <div>
                             <a href="#" onclick="displayPage('about');">ABOUT</a>
                         </div>
                     </li>
-                    <li>
+                    <li id="portfolio-link" class="nav-link">
                         <div>
                             <a href="#" onclick="displayPage('portfolio');">PORTFOLIO</a>
                         </div>
                     </li>
-                    <li>
+                    <li id="contact-link" class="nav-link">
                         <div>
                             <a href="#" onclick="displayPage('contact');">CONTACT</a>
                         </div>
@@ -59,7 +65,21 @@
     <footer id="footer">
         <div class="footer-background"></div>
         <div class="footer-content">
-            FOOTIN
+            <ul class="footer-nav">
+                <li>
+                    <a href="#" id="footer-about-link" class="footer-link" onclick="displayPage('about');">About</a>
+                </li>
+                <li>
+                    <a href="#" id="footer-portfolio-link" class="footer-link" onclick="displayPage('portfolio');">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#" id="footer-contact-link" class="footer-link" onclick="displayPage('contact');">Contact</a>
+                </li>
+            </ul>
+            <p>
+                &copy; Matthew Brubaker Smith 
+                <span id="footer-year"></span>
+            </p>
         </div>
     </footer>
     <script src="js/script.js"></script>
