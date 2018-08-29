@@ -1,0 +1,65 @@
+header {
+    height: 164px;
+    text-align: right;
+}
+
+header h1 {
+    line-height: 0px;
+    padding-top: 19px;
+    font-size: 4.5vw;
+    white-space: nowrap;
+}
+
+header h2 {
+    font-size: 3.37vw;
+    white-space: nowrap;
+}
+
+@media screen and (min-width: 1100px) {
+    header h1 {
+        line-height: unset;
+        padding-top: unset;
+        font-size: 3em;
+    }
+    
+    header h2 {
+        font-size: 2.25em;
+        margin-top: -30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        height: unset;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    header h1 {
+        margin-top: 0px;
+    }
+    
+    header h2 {
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header h1 {
+        font-size: 6vw;
+    }
+    
+    header h2 {
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header h1 {
+        font-size: 7vw;
+    }
+    
+    header h2 {
+        font-size: 5.2vw;
+    }
+}

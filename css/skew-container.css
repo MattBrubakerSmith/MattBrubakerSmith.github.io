@@ -1,0 +1,29 @@
+.skew-container {
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    padding-left: 200px;
+    left: -200px;
+    pointer-events: none;
+}
+
+.skew {
+    width: 100vw;
+    transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -o-transform: skew(-10deg);
+}
+
+.skew-content {
+    pointer-events: all;
+    margin: 15px;
+    transform: skew(10deg);
+    -webkit-transform: skew(10deg);
+    -moz-transform: skew(10deg);
+    -o-transform: skew(10deg);
+}
+
+.skew-container h2 {
+    line-height: 50px;
+}

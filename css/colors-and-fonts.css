@@ -1,0 +1,50 @@
+body * {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .header-font {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 2em;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(0, 153, 0);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.green-text {
+    color: rgb(0, 153, 0);
+}
+
+.green-background {
+    background-color: rgb(0, 153, 0);
+}
+
+.yellow-text {
+    color: rgb(255, 255, 51);
+}
+
+.yellow-background {
+    background-color: rgb(255, 255, 51);
+}
+
+.darkgray-text {
+    color: rgb(29, 29, 29);
+}
+
+.darkgray-background {
+    background-color: rgb(29, 29, 29);
+}
+
+.white-text {
+    color: white;
+}

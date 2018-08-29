@@ -1,0 +1,49 @@
+/* LAYOUT STYLES */
+body {
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+#main {
+    min-height: calc(100vh - 294px);
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.page-container {
+    width: calc(100% - 380px);
+    margin: 15px 15px 0px 15px;
+    padding-left: 350px;
+}
+
+.page-container > p {
+    margin-left: 15px;
+}
+
+.page-container p:first-of-type {
+    margin-top: 0px;
+}
+
+footer, footer a {
+    color: white;
+}
+
+footer .skew {
+    padding: 10px 0px 10px 0px;
+}
+
+@media screen and (max-width: 900px) {
+    #main {
+        min-height: calc(100vh - 336px);
+    }
+
+    .page-container {
+        width: calc(100% - 40px);
+        margin: unset;
+        padding-left: unset;
+        margin: 0 auto;
+    }
+}
