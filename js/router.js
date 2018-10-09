@@ -22,7 +22,9 @@ class Router {
     }
 
     async renderRoute(routeName) {
-        this.setActiveLink(routeName);
+        if(routeName === "about" || routeName === "portfolio" || routeName === "contact") {
+            this.setActiveLink(routeName);
+        }
         let main = this.main;
         main.innerHTML = "";
         const route = this.routes[routeName];

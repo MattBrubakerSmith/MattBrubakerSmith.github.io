@@ -5,6 +5,7 @@ function init() {
             about: new Component('views/about.html', main),
             portfolio: new Component('views/portfolio.html', main),
             contact: new Component('views/contact.html', main),
+            diagrams: new Component('views/smith-diagrams.html', main),
             "404": new Component('views/404.html', main)
         },
         document.getElementById('main')
