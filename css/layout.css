@@ -38,6 +38,11 @@ footer .skew {
 .footer-links {
     list-style-type: none;
     padding: unset;
+    display: flex;
+}
+
+.footer-links li {
+    padding-left: 10px;
 }
 
 @media screen and (max-width: 900px) {

@@ -5,10 +5,11 @@ function init() {
             about: new Component('views/about.html', main),
             portfolio: new Component('views/portfolio.html', main),
             contact: new Component('views/contact.html', main),
-            diagrams: new Component('views/smith-diagrams.html', main),
-            "404": new Component('views/404.html', main)
+            "404": new Component('views/404.html', main),
+            diagrams: new Component('views/web-335/smith-diagrams.html', main),
+            presentations: new Component('views/web-420/smith-rest.html', main)
         },
-        document.getElementById('main')
+        main
     );
     generateFooterCopyright();
     setupMobileMenu();

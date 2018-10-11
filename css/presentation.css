@@ -1,0 +1,9 @@
+.presentation {
+    max-width: 100%;
+}
+
+.presentation video {
+    max-width: 100%;
+    border: 1px solid rgb(29, 29, 29);
+    border-bottom-width: 2px;
+}
