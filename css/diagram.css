@@ -1,5 +1,5 @@
-.diagram {
-    width: 100%;
+.diagram:hover {
+    cursor: pointer;
 }
 
 .diagram img {

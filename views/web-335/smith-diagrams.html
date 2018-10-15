@@ -6,20 +6,24 @@
             "title": "Diagrams"
         }
     }'></component>
-    <component data-props='{
-        "url": "views/components/diagram.html",
-        "props": {
-            "title": "ORD User Diagram",
-            "image": "nosql-data-diagrams/ORD-week-1.jpg"
-        }
-    }'
-    ></component>
-    <component data-props='{
-        "url": "views/components/diagram.html",
-        "props": {
-            "title": "NoSQL User Diagram",
-            "image": "nosql-data-diagrams/NoSQL-week-1.jpg"
-        }
-    }'
-    ></component>
+    <div class="gallery">
+        <component data-props='{
+            "url": "views/components/diagram.html",
+            "props": {
+                "title": "User Diagram",
+                "ord": "nosql-data-diagrams/ORD-week-1.jpg",
+                "nosql": "nosql-data-diagrams/NoSQL-week-1.jpg"
+            }
+        }'
+        ></component>
+        <component data-props='{
+            "url": "views/components/diagram.html",
+            "props": {
+                "title": "Customer/Invoice Diagram",
+                "ord": "nosql-data-diagrams/ORD-week-2.jpg",
+                "nosql": "nosql-data-diagrams/NoSQL-week-2.jpg"
+            }
+        }'
+        ></component>
+    </div>
 </div>

@@ -27,6 +27,23 @@ body {
     margin-top: 0px;
 }
 
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+.gallery-item {
+    max-width: 47%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+
+    border: 1px solid rgb(29, 29, 29);
+}
+
 footer, footer a {
     color: white;
 }
@@ -55,5 +72,11 @@ footer .skew {
         margin: unset;
         padding-left: unset;
         margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .gallery-item {
+        max-width: 100%;
     }
 }

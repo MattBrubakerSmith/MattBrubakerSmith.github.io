@@ -1,0 +1,17 @@
+#modal {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-modal {
+    display: flex !important;
+}

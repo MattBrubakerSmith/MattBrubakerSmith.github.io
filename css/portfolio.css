@@ -1,21 +1,4 @@
 /* PORTFOLIO PAGE STYLES */
-#portfolio-gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 15px;
-}
-
-.portfolio-thumb {
-    max-width: 47%;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-
-    border: 1px solid rgb(29, 29, 29);
-}
-
 .portfolio-thumb h3 {
     margin-top: 0px;
 }
@@ -26,10 +9,4 @@
 
 .portfolio-thumb img {
     width: 100%;
-}
-
-@media screen and (max-width: 600px) {
-    .portfolio-thumb {
-        max-width: 100%;
-    }
 }
