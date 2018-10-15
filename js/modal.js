@@ -48,3 +48,7 @@ var Modal = (function() {
 function toggleModal(e) {
     Modal.toggle(e.target);
 }
+
+window.addEventListener('hashchange', function() {
+    Modal.close();
+});
